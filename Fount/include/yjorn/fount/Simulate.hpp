@@ -1,8 +1,8 @@
 #pragma once
 
-#include <yjorn/asol/configuration.hpp>
+#include <yjorn/fount/configuration.hpp>
 
-namespace yorn::asol {
+namespace yorn::fount {
     class Simulate {
         public:
             Simulate(configuration conf);

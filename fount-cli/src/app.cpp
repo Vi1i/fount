@@ -1,6 +1,6 @@
 #include <cstdlib>
 
-#include <yjorn/asol/configuration.hpp>
+#include <yjorn/fount/configuration.hpp>
 
 auto main(void) -> int {
     return EXIT_SUCCESS;

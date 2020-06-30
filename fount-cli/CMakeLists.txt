@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.7)
-project(asol VERSION 0.1.0 LANGUAGES CXX)
+project(fount-cli VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -13,22 +13,22 @@ if (${FORCE_COLORED_OUTPUT})
     endif ()
 endif ()
 
-add_executable(asol
+add_executable(fount-cli
     src/app.cpp
 )
 
 #Set target properties
-target_include_directories(asol
+target_include_directories(fount-cli
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
-        ASoL
+        Fount
 )
 
-target_link_libraries(asol
+target_link_libraries(fount-cli
   PUBLIC
   PRIVATE
-  ASoL
+  Fount
 )

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.7)
-project(ASoL VERSION 0.1.0 LANGUAGES CXX)
+project(Fount VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -13,13 +13,13 @@ if (${FORCE_COLORED_OUTPUT})
     endif ()
 endif ()
 
-add_library(ASoL SHARED
+add_library(Fount SHARED
     src/configuration.cpp
     src/Simulate.cpp
 )
 
 #Set target properties
-target_include_directories(ASoL
+target_include_directories(Fount
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -27,8 +27,7 @@ target_include_directories(ASoL
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_link_libraries(ASoL
+target_link_libraries(Fount
   PUBLIC
-  ${LIBCONFIG_PLUSPLUS_LIBRARIES}
   PRIVATE
 )
