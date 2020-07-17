@@ -4,4 +4,5 @@ project(TheFount VERSION 0.1.0.0 LANGUAGES CXX)
 include(GNUInstallDirs)
 
 add_subdirectory(Fount)
+add_subdirectory(fountd)
 add_subdirectory(fount-cli)
