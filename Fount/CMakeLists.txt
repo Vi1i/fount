@@ -16,6 +16,7 @@ endif ()
 add_library(Fount SHARED
     src/configuration.cpp
     src/Simulate.cpp
+    src/System.cpp
 )
 
 #Set target properties
