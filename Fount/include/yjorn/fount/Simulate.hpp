@@ -2,7 +2,7 @@
 
 #include <yjorn/fount/configuration.hpp>
 
-namespace yorn::fount {
+namespace yjorn::fount {
     class Simulate {
         public:
             Simulate(configuration conf);
