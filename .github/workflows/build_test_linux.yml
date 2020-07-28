@@ -1,0 +1,21 @@
+name: Ubuntu Build's
+on:
+  push:
+    branches: 
+      - master
+jobs:
+  ubuntu18:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Install Depenancies
+        run: |
+          sudo apt update
+      - uses: actions/checkout@v2
+      - name: Generate Build Files
+        run: |
+          cd build
+          cmake .. -DCMAKE_BUILD_TYPE=Debug
+      - name: Build
+        run: |
+          cd build
+          make -j 2
