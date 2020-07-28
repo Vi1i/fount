@@ -69,8 +69,7 @@ bool Socket::listen() const {
 
 bool Socket::accept(Socket& new_socket) const {
     int addr_length = sizeof(m_addr);
-    new_socket.m_sock = ::accept(m_sock, (sockaddr*)&m_addr, (socklen_t*)
-                                 &addr_length);
+    new_socket.m_sock = ::accept(m_sock, (sockaddr*)&m_addr, (socklen_t*) &addr_length);  // NOLINT
 
     if (new_socket.m_sock <= 0) {
         return false;
@@ -123,7 +122,7 @@ bool Socket::connect(const std::string host, const int port) {
         return false;
     }
 
-    status = ::connect( m_sock, (sockaddr*) &m_addr, sizeof(m_addr));
+    status = ::connect( m_sock, (sockaddr*) &m_addr, sizeof(m_addr));  // NOLINT
 
     if (status == 0) {
         return true;
