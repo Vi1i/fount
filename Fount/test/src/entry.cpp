@@ -1,3 +1,6 @@
+// Copyright 2020
+// Author: Vi1i
+
 #include <gtest/gtest.h>
 
 auto main(int argc, char *argv[]) -> int {
