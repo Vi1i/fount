@@ -1,8 +1,11 @@
+// Copyright 2020
+// Author: Vi1i
+
 #include <cstdlib>
 #include <iostream>
 #include <memory>
 
-#include <yjorn/fount/configuration.hpp>
+#include <yjorn/fount/Configuration.hpp>
 #include <yjorn/fount/System.hpp>
 
 auto printSystemInfo(std::shared_ptr<yjorn::fount::info> info) -> void {

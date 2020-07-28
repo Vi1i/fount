@@ -1,19 +1,22 @@
+// Copyright 2020
+// Author: Vi1i
+
 #pragma once
 
-#include <yjorn/fount/configuration.hpp>
+#include <yjorn/fount/Configuration.hpp>
 
 namespace yjorn::fount {
-    class Simulate {
-        public:
-            Simulate(configuration conf);
-            Simulate();
+class Simulate {
+ public:
+    explicit Simulate(Configuration conf);
+    Simulate();
 
-            ~Simulate();
+    ~Simulate();
 
-            auto Configure(configuration conf) -> bool;
-            auto Run() -> void;
+    auto Configure(Configuration conf) -> bool;
+    auto Run() -> void;
 
-        private:
-            configuration _conf;
-    }
-}
+ private:
+    Configuration _conf;
+};
+}  // namespace yjorn::fount
