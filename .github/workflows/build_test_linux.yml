@@ -12,7 +12,8 @@ jobs:
           sudo apt update
           sudo apt install libsystemd-dev
       - uses: actions/checkout@v2
-        submodules: true
+        with:
+          submodules: true
       - name: Generate Build Files
         run: |
           cd build
