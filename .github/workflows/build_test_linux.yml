@@ -10,6 +10,7 @@ jobs:
       - name: Install Depenancies
         run: |
           sudo apt update
+          sudo apt install libsystemd-dev
       - uses: actions/checkout@v2
       - name: Generate Build Files
         run: |
