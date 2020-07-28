@@ -33,3 +33,5 @@ target_link_libraries(Fount
   PUBLIC
   PRIVATE
 )
+
+add_subdirectory(test)

@@ -20,3 +20,7 @@ jobs:
         run: |
           cd build
           make -j 2
+      - name: Test
+        run: |
+          cd build
+          make test
