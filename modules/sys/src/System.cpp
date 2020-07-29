@@ -10,9 +10,9 @@
 #include <iostream>
 #include <memory>
 
-#include <yjorn/fount/System.hpp>
+#include <yjorn/sys/System.hpp>
 
-namespace yjorn::fount {
+namespace yjorn::sys {
 auto GetSystemInfo(std::shared_ptr<info> info) -> void {
     if (!info.get()) {
         std::cerr << "shared_ptr";
@@ -32,4 +32,4 @@ auto GetSystemInfo(std::shared_ptr<info> info) -> void {
     info->machine = std::string(buffer.machine);
     info->domainName = std::string(buffer.domainname);
 }
-}  // namespace yjorn::fount
+}  // namespace yjorn::sys

@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include <yjorn/fount/Configuration.hpp>
+#include <yjorn/fount/core/Configuration.hpp>
 
-namespace yjorn::fount {
+namespace yjorn::fount::core {
 class Simulate {
  public:
     explicit Simulate(Configuration conf);
@@ -19,4 +19,4 @@ class Simulate {
  private:
     Configuration _conf;
 };
-}  // namespace yjorn::fount
+}  // namespace yjorn::fount::core

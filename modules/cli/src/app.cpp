@@ -5,10 +5,10 @@
 #include <iostream>
 #include <memory>
 
-#include <yjorn/fount/Configuration.hpp>
-#include <yjorn/fount/System.hpp>
+#include <yjorn/fount/core/Configuration.hpp>
+#include <yjorn/sys/System.hpp>
 
-auto printSystemInfo(std::shared_ptr<yjorn::fount::info> info) -> void {
+auto printSystemInfo(std::shared_ptr<yjorn::sys::info> info) -> void {
     std::cout << "   System Name: " << info->sysName << std::endl;
     std::cout << "     Node Name: " << info->nodeName << std::endl;
     std::cout << "Kernel Release: " << info->kernelRelease << std::endl;
@@ -18,9 +18,9 @@ auto printSystemInfo(std::shared_ptr<yjorn::fount::info> info) -> void {
 }
 
 auto main(void) -> int {
-    auto info = std::shared_ptr<yjorn::fount::info>(new yjorn::fount::info);
+    auto info = std::shared_ptr<yjorn::sys::info>(new yjorn::sys::info);
 
-    yjorn::fount::GetSystemInfo(info);
+    yjorn::sys::GetSystemInfo(info);
     printSystemInfo(info);
 
     return EXIT_SUCCESS;

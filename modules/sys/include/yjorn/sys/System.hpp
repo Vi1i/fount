@@ -6,7 +6,7 @@
 #include <string>
 #include <memory>
 
-namespace yjorn::fount {
+namespace yjorn::sys {
 // TODO(Vi1i): Add more system information, memory, cpu, network, etc.
 //             Make this a goddamn monitoring system if needed.
 struct info {
@@ -22,4 +22,4 @@ struct info {
 //             filter, as we may add methods later that modify the same
 //             data that we may or may not want to overwrite.
 auto GetSystemInfo(std::shared_ptr<info> info) -> void;
-}  // namespace yjorn::fount
+}  // namespace yjorn::sys

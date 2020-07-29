@@ -3,8 +3,8 @@
 
 #pragma once
 
-namespace yjorn::fount {
+namespace yjorn::fount::core {
 class Configuration {
     Configuration();
 };
-}  // namespace yjorn::fount
+}  // namespace yjorn::fount::core

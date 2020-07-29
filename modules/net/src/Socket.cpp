@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <fcntl.h>
 
-#include "Socket.hpp"
+#include <yjorn/net/Socket.hpp>
 
 Socket::Socket() : m_sock(-1) {
     memset(&m_addr, 0, sizeof(m_addr));
