@@ -17,8 +17,9 @@ target_include_directories(sys
 )
 
 target_link_libraries(sys
-  PUBLIC
-  PRIVATE
+    PUBLIC
+        stdc++fs
+    PRIVATE
 )
 
 set_target_properties(sys PROPERTIES OUTPUT_NAME "YjornSys")
