@@ -18,13 +18,23 @@ target_include_directories(fountd
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
-        Fount
         ${SYSTEMD_INCLUDE_DIRS}
+        yjorn::sys
+        yjorn::fount::core
 )
 
 target_link_libraries(fountd
-  PUBLIC
-  PRIVATE
-  ${SYSTEMD_LIBRARIES}
-  Fount
+    PUBLIC
+    PRIVATE
+    ${SYSTEMD_LIBRARIES}
+    yjorn::fount::core
+    yjorn::sys
+)
+
+set_target_properties(fountd PROPERTIES OUTPUT_NAME "fountd")
+
+install (TARGETS fountd
+    EXPORT FountdTargets
+    RUNTIME DESTINATION bin
+    INCLUDES DESTINATION include
 )

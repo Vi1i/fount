@@ -4,7 +4,7 @@
 #include <cstdlib>
 
 #include "daemonize_systemd.hpp"
-#include <yjorn/fount/Configuration.hpp>
+#include <yjorn/fount/core/Configuration.hpp>
 
 auto main(void) -> int {
     daemonize();
