@@ -1,18 +1,19 @@
 // Copyright 2020
 // Author: Vi1i
 
+#include <unistd.h>
+#include <systemd/sd-daemon.h>
+#include <systemd/sd-journal.h>
+
+#include <spdlog/async.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+#include <spdlog/sinks/systemd_sink.h>
+#include <spdlog/spdlog.h>
+
 #include <csignal>
 #include <cstdlib>
 #include <iostream>
-#include <systemd/sd-daemon.h>
-#include <systemd/sd-journal.h>
-#include <unistd.h>
 #include <vector>
-
-#include "spdlog/async.h"
-#include "spdlog/sinks/stdout_color_sinks.h"
-#include "spdlog/sinks/systemd_sink.h"
-#include "spdlog/spdlog.h"
 
 #include <yjorn/fount/core/Configuration.hpp>
 #include <yjorn/net/Socket.hpp>
@@ -25,7 +26,8 @@ auto setup_logging() -> void {
     auto systemd_sink = std::make_shared<spdlog::sinks::systemd_sink_mt>();
 
     std::vector<spdlog::sink_ptr> sinks {stdout_sink, systemd_sink};
-    auto logger = std::make_shared<spdlog::async_logger>("fountd", sinks.begin(), sinks.end(), spdlog::thread_pool(), spdlog::async_overflow_policy::block);
+    auto logger = std::make_shared<spdlog::async_logger>("fountd", sinks.begin(), sinks.end(), spdlog::thread_pool(),
+            spdlog::async_overflow_policy::block);
     spdlog::register_logger(logger);
     logger->set_level(spdlog::level::debug);
 }
@@ -50,12 +52,12 @@ auto main(int argc, char* argv[]) -> int {
 
     int port(32000);
 
-    if(argc > 2) {
+    if (argc > 2) {
         exit(1);
     } else {
-        if(argc == 2) {
+        if (argc == 2) {
             port = std::stoi(argv[1]);
-            if(port < 1024) {
+            if (port < 1024) {
                 spdlog::get("fountd")->error("privileged port({}) used", port);
                 exit(1);
             }
