@@ -81,8 +81,11 @@ namespace {
         } else if (p.first == "cache_alignment") {
         } else if (p.first == "address sizes") {
         } else if (p.first == "power management") {
+        } else if (p.first == "vmx flags") {
         } else {
             std::cerr << "cpuinfo key(" << p.first << ") does not exist: ";
+            // TODO(Vi1i): This throw is only here for development catching unknowns
+            //             Will need to remove eventually
             throw std::runtime_error(p.first);
         }
     }
